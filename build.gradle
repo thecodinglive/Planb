@@ -1,0 +1,28 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+repositories {
+    jcenter()
+}
+
+ext{
+	 javaVersion = '1.8'
+	 springVersion = "3.2.9.RELEASE"
+	 slf4jVersion = '1.7.5'
+	 logbackVersion = '1.0.13'
+ }
+
+
+
+[compileGroovy, compileTestGroovy]*.options*.encoding = 'UTF-8'
+
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.0'
+
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+    testCompile 'junit:junit:4.12'
+
+    compile 'org.springframework:spring-core:4.1.6.RELEASE'
+}
